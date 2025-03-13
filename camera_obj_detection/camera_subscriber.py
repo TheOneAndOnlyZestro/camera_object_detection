@@ -6,7 +6,7 @@ class CameraObjDetection(Node):
         self.test = self.create_timer(0.5, self.test_callback)
 
     def test_callback(self):
-        self.get_logger().info("This node is working, again!!!!")
+        self.get_logger().info("This node is working, again!!!!!!!!!!!")
 
 
 #Apply in main function
