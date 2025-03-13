@@ -1,0 +1,12 @@
+# Ignore build directories
+/build/
+/install/
+/log/
+
+# Ignore Python bytecode files
+*.pyc
+__pycache__/
+
+# Ignore editor swap files (Vim, Emacs, etc.)
+*.swp
+
