@@ -1,3 +1,4 @@
+import os
 import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Image
@@ -14,7 +15,16 @@ class CameraObjDetection(Node):
         10)
         self.bridge = CvBridge()
         self.publisher_ = self.create_publisher(Image, "/camera_obj_prediction",10)
-        self.model = YOLO("./best.pt")
+
+        # Get the directory where this script is located
+        script_dir = os.path.dirname(os.path.realpath(__file__))
+        
+        # Construct the path to best.pt
+        model_path = os.path.join(script_dir, "best.pt")
+        
+        # Load the YOLOv8 model
+        self.model = YOLO(model_path)
+
         self.model.fuse()
     def test_callback(self, msg):
         cv_image = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
