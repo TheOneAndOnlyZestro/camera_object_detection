@@ -14,7 +14,7 @@ class CameraObjDetection(Node):
         10)
         self.bridge = CvBridge()
         self.publisher_ = self.create_publisher(Image, "/camera_obj_prediction",10)
-        self.model = YOLO("best.pt")
+        self.model = YOLO("./best.pt")
         self.model.fuse()
     def test_callback(self, msg):
         cv_image = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
