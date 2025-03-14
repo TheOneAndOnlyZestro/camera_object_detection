@@ -23,7 +23,7 @@ class CameraObjDetection(Node):
         model_path = os.path.join(script_dir, "best.pt")
         
         # Load the YOLOv8 model
-        self.model = YOLO(model_path)
+        self.model = YOLO("/home/ubuntu/giu_f1tenth_ws/software/src/perception/camera_obj_detection/camera_obj_detection/best.pt")
 
         self.model.fuse()
     def test_callback(self, msg):
