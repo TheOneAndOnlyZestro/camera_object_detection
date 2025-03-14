@@ -11,7 +11,7 @@ class CameraObjDetection(Node):
         "/camera/camera/color/image_raw",
         self.test_callback,
         10)
-        self.bridge = CVBridge()
+        self.bridge = CvBridge()
     def test_callback(self, msg):
         cv_image = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
 
